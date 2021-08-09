@@ -1,0 +1,26 @@
+{
+    "name": "soccer-back",
+    "version": "1.0.0",
+    "description": "soccer tournament back",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/davidhurtadop/soccer-back.git"
+    },
+    "author": "@dahurtadop",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/davidhurtadop/soccer-back/issues"
+    },
+    "homepage": "https://github.com/davidhurtadop/soccer-back#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "pg": "^8.7.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12"
+    }
+}
