@@ -11,7 +11,6 @@ const pool = new Pool({
     port: 5432,
 })
 
-
 router.get('/', async(req, res) => {
     pool.query('SELECT * FROM public."Users"', async(errs, resu) => {
         console.log(errs, resu.rows)
@@ -25,7 +24,6 @@ router.post('/', async(req, res) => {
         res.send('User Added Succesfully')
     })
 })
-
 
 router.delete('/', async(req, res) => {
     pool.query('DELETE FROM public."Users" WHERE "Id" = $1', [4], async(errs, resu) => {
