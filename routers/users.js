@@ -1,42 +1,21 @@
 var express = require('express')
 var router = express.Router()
-
-const { Pool } = require('pg')
-
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'soccerAppBD',
-    password: 'admin123',
-    port: 5432,
-})
+var usersController = require('./../controllers/users')
 
 router.get('/', async(req, res) => {
-    pool.query('SELECT * FROM public."Users"', async(errs, resu) => {
-        console.log(errs, resu.rows)
-        res.send(resu.rows)
-    })
+    usersController.getUsers(req, res)
 })
 
 router.post('/', async(req, res) => {
-    pool.query('INSERT INTO public."Users" ("Id","Full_Name","login","password") VALUES ($1,$2,$3,$4)', [4, "Mia", null, null], async(errs, resu) => {
-        console.log(errs, resu)
-        res.send('User Added Succesfully')
-    })
+    usersController.saveUsers(req, res)
 })
 
 router.delete('/', async(req, res) => {
-    pool.query('DELETE FROM public."Users" WHERE "Id" = $1', [4], async(errs, resu) => {
-        console.log(errs, resu)
-        res.send('User Deleted Succesfully')
-    })
+    usersController.deleteUsers(req, res)
 })
 
 router.put('/', async(req, res) => {
-    pool.query('UPDATE public."Users" SET "login" = $1 WHERE "Id" = $2', ["mia@correo.com", 4], async(errs, resu) => {
-        console.log(errs, resu)
-        res.send('User Updated Succesfully')
-    })
+    usersController.updateUsers(req, res)
 })
 
 module.exports = router
