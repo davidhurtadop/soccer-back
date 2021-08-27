@@ -4,7 +4,8 @@
     "description": "soccer tournament back",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js"
     },
     "repository": {
         "type": "git",
@@ -18,7 +19,8 @@
     "homepage": "https://github.com/davidhurtadop/soccer-back#readme",
     "dependencies": {
         "express": "^4.17.1",
-        "pg": "^8.7.1"
+        "pg": "^8.7.1",
+        "uuid": "^8.3.2"
     },
     "devDependencies": {
         "nodemon": "^2.0.12"

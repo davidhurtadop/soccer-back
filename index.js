@@ -8,6 +8,8 @@ app.get('/', (req, res) => {
     res.send('hello from simple server :)')
 })
 
+app.use(express.json());
+
 app.use('/api/users', users)
 
 app.listen(port, () => {
