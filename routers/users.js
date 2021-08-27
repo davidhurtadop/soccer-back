@@ -1,20 +1,25 @@
 var express = require('express')
 var router = express.Router()
+
 var usersController = require('./../controllers/users')
 
 router.get('/', async(req, res) => {
     usersController.getUsers(req, res)
 })
 
+router.get('/:id', async(req, res) => {
+    usersController.getUserById(req, res)
+})
+
 router.post('/', async(req, res) => {
     usersController.saveUsers(req, res)
 })
 
-router.delete('/', async(req, res) => {
+router.delete('/:id', async(req, res) => {
     usersController.deleteUsers(req, res)
 })
 
-router.put('/', async(req, res) => {
+router.put('/:id', async(req, res) => {
     usersController.updateUsers(req, res)
 })
 
